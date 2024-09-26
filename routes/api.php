@@ -14,3 +14,4 @@ Route::post('/client_info', [ClientController::class, 'store']);
 
 
 Route::get('/all_info', [ClientController::class, 'index']);
+

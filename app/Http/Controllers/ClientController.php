@@ -54,6 +54,7 @@ class ClientController extends Controller
             'vision_ar' => $request->vision_ar,
             'about_us' => $request->about_us,
             'about_us_ar' => $request->about_us_ar,
+            'additional_info' => $request->additional_info
         ]);
 
         // Create Services if provided
@@ -98,10 +99,17 @@ class ClientController extends Controller
         }
 
         // Return a response
-        return response()->json([
+        // return response()->json([
+        //     'message' => 'Client and related data successfully created.',
+        //     'client' => $client->load('services', 'contacts.phones', 'references')
+        // ], 201);
+
+
+
+        return view('show', [
             'message' => 'Client and related data successfully created.',
             'client' => $client->load('services', 'contacts.phones', 'references')
-        ], 201);
+        ]);
     }
 
 
